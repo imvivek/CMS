@@ -18,22 +18,19 @@ public class EmployeeDaoImpl extends AbstractDao implements EmployeeDao {
 	@SuppressWarnings("unchecked")
 	public List<Employee> findAllEmployee() {
 		Criteria criteria = getSession().createCriteria(Employee.class);
-		return (List<Employee>)criteria.list();
+		return (List<Employee>) criteria.list();
 	}
 
 	public void deleteEmployeeBySsn(String ssn) {
-		// TODO Auto-generated method stub
-		
+
 	}
 
 	public Employee findBySsn(String ssn) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	public void updateEmployee(Employee employee) {
-		// TODO Auto-generated method stub
-		
+
 	}
 
 }

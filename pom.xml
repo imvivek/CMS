@@ -13,6 +13,7 @@
 		<springframework.version>4.2.6.RELEASE</springframework.version>
 		<hibernate.version>5.1.0.Final</hibernate.version>
 		<mysql.connector.version>5.1.6</mysql.connector.version>
+		<jaskson.version>2.7.4</jaskson.version>
 	</properties>
 
 	<dependencies>
@@ -50,6 +51,25 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>${hibernate.version}</version>
 		</dependency>
+
+		<!-- Rest Dependency -->
+		<!-- <dependency> <groupId>com.fasterxml.jackson.core</groupId> <artifactId>jackson-core</artifactId> 
+			<version>${jackson.version}</version> </dependency> -->
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.7.4</version>
+		</dependency>
+
+
+		<!-- Servlet Dependency -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+
 
 
 		<!-- MySql Dependency -->
