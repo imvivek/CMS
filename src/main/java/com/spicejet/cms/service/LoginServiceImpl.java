@@ -22,8 +22,12 @@ public class LoginServiceImpl implements LoginService {
 
 	}
 
-	public void checkLogin(String userRole, String userId, String password) {
+	public Login checkLogin(String userRole, String userId, String password) {
+		return loginDao.checkLogin(userRole, userId, password);
+	}
 
+	public Login checkLoginAuthenticate(Login login) {
+		return loginDao.checkLoginDetails(login);
 	}
 
 }

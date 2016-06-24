@@ -15,11 +15,11 @@ public class Login {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	@Column(name = "userroll", nullable = false)
+	@Column(name = "userrole", nullable = false)
 	private String userRoll;
 
 	@Column(name = "username", nullable = false)
-	private String userName;
+	private String userName ;
 
 	@Column(name = "password", nullable = false)
 	private String password;
