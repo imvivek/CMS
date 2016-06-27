@@ -16,6 +16,17 @@ angular
 				templateUrl : 'app/views/home.html'
 			})
 			
+			.when('/admin', {
+//				controller : 'LoginController',
+				templateUrl : 'app/views/adminHome.html'
+			})
+			
+			.when('/local', {
+//				controller : 'LoginController',
+				templateUrl : 'app/views/localHome.html'
+			})
+			
+			
 			.when('/', {
 				controller : 'LoginController',
 				templateUrl : 'app/views/userlogin.html'

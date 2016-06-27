@@ -9,21 +9,46 @@ angular.module('Authentication')
 	    	 $scope.login = function(){
 	    		 $scope.dataLoading= true;
 	    		 
-	    		 $http.get('http://localhost:8080/CMS/login/'+$scope.userrole+'/'+ $scope.username+'/'+$scope.password)
-				 	.success(function(data){
-				 		if(data.status=="SUCCESS"){
-	    				 $location.path('/');	    				 
-	    			 }
-				 		
-				 		if(data.status=="ERROR"){
-				 			$scope.error = data.message;
-				 			$location.path('/home');
-				 		}
-				 	})	
-	    			 .error(function(data){
-	    				 $scope.error = data.message;
-	    				 $scope.dataLoading = false;
-	    			 });
+	    		 if($scope.userrole.toUpperCase()=="ADMIN")
+	    		{
+		    		 $http.get('http://localhost:8080/CMS/login/'+$scope.userrole+'/'+ $scope.username+'/'+$scope.password)
+					 	.success(function(data){
+					 		if(data.status=="SUCCESS"){
+		    				 $location.path('/');	    				 
+		    			 }
+					 		
+					 		if(data.status=="ERROR"){
+					 			$scope.error = data.message;
+//					 			$location.path('/admin');
+					 		}
+					 	})	
+		    			 .error(function(data){
+		    				 $scope.error = data.message;
+		    				 $scope.dataLoading = false;
+		    			 });
+	    		} 
+
+	    		 if($scope.userrole.toUpperCase()=="LOCAL")
+		    		{
+			    		 $http.get('http://localhost:8080/CMS/login/'+$scope.userrole+'/'+ $scope.username+'/'+$scope.password)
+						 	.success(function(data){
+						 		if(data.status=="SUCCESS"){
+			    				 $location.path('/local');	    				 
+			    			 }
+						 		
+						 		if(data.status=="ERROR"){
+						 			$scope.error = data.message;
+//						 			$location.path('/home');
+						 		}
+						 	})	
+			    			 .error(function(data){
+			    				 $scope.error = data.message;
+			    				 $scope.dataLoading = false;
+			    			 });
+		    		} 
+	    		 else{
+	    			 $scope.error = "Please Choose Userrole Between : Admin or Local";
+	    		 }
 				 };
 	     
 	    		 
